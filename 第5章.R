@@ -137,3 +137,21 @@ chisq.test(クロス集計表, correct = FALSE)
 # 図5.7(カイ二乗検定の棄却域)
 curve(dchisq(x, 1), 0, 6)
 abline(v = qchisq(0.05, 1, lower.tail = FALSE))
+
+
+# サンプルサイズの検定結果への影響について
+履修A <- matrix(c(16,12,4,8), 2, 2)
+履修A
+rownames(履修A) <- c("文系", "理系")
+colnames(履修A) <- c("履修した", "履修しない")
+履修A
+
+chisq.test(履修A, correct = FALSE)
+
+履修B <- matrix(c(160,120,40,80), 2, 2)
+履修B
+rownames(履修B) <- c("文系", "理系")
+colnames(履修B) <- c("履修した", "履修しない")
+履修B
+
+chisq.test(履修B, correct = FALSE)
